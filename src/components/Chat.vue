@@ -12,7 +12,7 @@
                 </ul>
             </div>
             <div class="card-action">
-                <NewMessage name='name' /> 
+                <NewMessage :name='name' /> 
             </div>
         </div>
     </div>

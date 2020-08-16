@@ -2,7 +2,7 @@
   <div class="welcome container">
     <div class="card">
       <div class="card-content center-align">
-        <h2 class="blue-text">Welcome To Chatterbox</h2>
+        <h2 class="blue-text">Chatterbox</h2>
         <form @submit.prevent='enterChat'>
           <label for="name">Enter your name: </label>
           <input type="text" name="name" v-model="name">
@@ -37,7 +37,7 @@ export default {
 }
 
 .welcome h2 {
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .welcome button {

@@ -1,3 +1,6 @@
+import firebase from 'firebase'
+import firestore from 'firebase/firestore'
+
 var firebaseConfig = {
     apiKey: "AIzaSyAjCKqM8NvSVHznBcq2kH_7Fm0HWvEMWFo",
     authDomain: "my-chatterbox.firebaseapp.com",
@@ -9,5 +12,7 @@ var firebaseConfig = {
     measurementId: "G-071WL4V2Q8"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  const firebaseApp = firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+
+  export default firebaseeApp.firestore()

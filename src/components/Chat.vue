@@ -20,6 +20,7 @@
 
 <script>
 import NewMessage from '@/components/NewMessage'
+import db from '@/firebase/init'
 
 export default {
     name: 'Chat',
@@ -32,6 +33,13 @@ export default {
 
         }
     },
+    created(){
+        let ref = db.collection('chats')
+
+        ref.onSnapshot(snapshot => {
+            console.log(snapshot.docChanges())  
+        })
+    }
 }
 </script>
 

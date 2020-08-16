@@ -27,7 +27,7 @@ export default {
     enterChat() {
       // console.log(this.name)
       if (this.name) {
-        this.$router.push({ name: 'Chat' })
+        this.$router.push({ name: 'Chat', params: {name: this.name} })
       }else {
         this.feedback = 'Please enter your name to join'
       }

@@ -32,7 +32,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .welcome {
-  max-width: 400px;
+  max-width: 4 00px;
   margin-top: 100px;
 }
 

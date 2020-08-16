@@ -23,7 +23,7 @@ export default {
     methods: {
         addMessage(){
             if (this.newMessage) {
-                db.collection('message').add({
+                db.collection('chats').add({
                     content: this.newMessage,
                     name: this.name,
                     timestamp: Date.now()

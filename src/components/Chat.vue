@@ -4,10 +4,10 @@
         <div class="card">
             <div class="card-content">
                 <ul class="messages">
-                    <li>
-                        <span class="blue-text">Name</span>
-                        <span class="grey-text text-darken-3 message">Message</span>
-                        <span class="grey-text time">Time</span>  
+                    <li v-for="chat in chats" :key="chat.id">
+                        <span class="blue-text"> {{ chat.name }} </span>
+                        <span class="grey-text text-darken-3 message">{{ chat.content }}</span>
+                        <span class="grey-text time">{{ chats.timestamp }}</span>  
                     </li>
                 </ul>
             </div>
@@ -30,14 +30,24 @@ export default {
     },
     data() {
         return {
-
+            chats: []
         }
     },
     created(){
-        let ref = db.collection('chats')
+        let ref = db.collection('chats').orderBy('timestamps')
 
-        ref.onSnapshot(snapshot => {
-            console.log(snapshot.docChanges())  
+       ref.onSnapshot(snapshot => {
+            snapshot.docChange().forEach(change => {
+                if(change.type == 'added'){
+                    let doc = change.doc
+                    this.chats.push({
+                        id: doc.id,
+                        name: doc.data().name,
+                        content: doc.data().content,
+                        timestamp: doc.data().timestamp
+                    })
+                }
+            });  
         })
     }
 }

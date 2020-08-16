@@ -16,7 +16,7 @@ export default {
     props: ['name'],
     data() {
         return {
-            NewMessage: null,
+            newMessage: null,
             feedback: null
         }
     },

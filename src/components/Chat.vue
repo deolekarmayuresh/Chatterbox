@@ -21,6 +21,8 @@
 <script>
 import NewMessage from '@/components/NewMessage'
 import db from '@/firebase/init'
+import moment from 'moment'
+
 export default {
   name: 'Chat',
   props: ['name'],
@@ -45,7 +47,7 @@ export default {
             id: doc.id,
             name: doc.data().name,
             content: doc.data().content,
-            timestamp: doc.data().timestamp
+            timestamp: moment(doc.data().timestamp).format('lll')
           })
         }
       })
@@ -67,6 +69,21 @@ export default {
 }
 .chat .time{
   display: block;
-  font-size: 1.2em;
+  font-size: 0.8em;
+}
+.messages{
+    max-height: 300px;
+    overflow: auto;
+}
+.messages::-webkit-scrollbar {
+  width: 3px;
+}
+ 
+.messages::-webkit-scrollbar-track {
+  background: #ddd;
+}
+ 
+.messages::-webkit-scrollbar-thumb {
+  background: #aaa; 
 }
 </style>

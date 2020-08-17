@@ -3,7 +3,7 @@
     <h2 class="center blue-text">Chatterbox</h2>
     <div class="card">
       <div class="card-content">
-        <ul class="messages">
+        <ul class="messages" v-chat-scroll>
           <li v-for="message in messages" :key="message.id">
             <span class="blue-text">{{ message.name }}</span>
             <span class="grey-text text-darken-3 msg">{{ message.content }}</span>

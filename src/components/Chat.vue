@@ -40,7 +40,7 @@ export default {
     // subscribe to changes to the 'messages' collection
     ref.onSnapshot(snapshot => {
       snapshot.docChanges().forEach(change => {
-        console.log(change)
+        //console.log(change)
         if(change.type == 'added'){
           let doc = change.doc
           this.messages.push({

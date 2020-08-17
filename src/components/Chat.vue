@@ -60,6 +60,7 @@ export default {
 .chat h2{
   font-size: 2.6em;
   margin-bottom: 40px;
+  font-style: italic;
 }
 .chat span{
   font-size: 1.4em;
@@ -80,10 +81,10 @@ export default {
 }
  
 .messages::-webkit-scrollbar-track {
-  background: #ddd;
+  background: rgb(255, 255, 255);
 }
  
 .messages::-webkit-scrollbar-thumb {
-  background: #aaa; 
+  background: rgb(93, 155, 255); 
 }
 </style>

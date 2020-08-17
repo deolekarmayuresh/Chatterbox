@@ -1,4 +1,4 @@
-# chatterbox
+# Chatterbox 💬
 
 > A Real-Time chat Vuejs application 
 
